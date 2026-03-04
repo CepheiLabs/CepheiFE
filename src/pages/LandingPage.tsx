@@ -11,7 +11,7 @@ export default function LandingPage() {
     <div
       style={{
         backgroundColor: '#141721',
-        minHeight: '100vh',
+        minHeight: '100%',
         width: '100%',
         overflowX: 'hidden',
       }}
