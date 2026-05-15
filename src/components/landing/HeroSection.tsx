@@ -1,57 +1,25 @@
+import { Button } from "@/components/ui/button"
+
 export default function HeroSection() {
   return (
     <section
-      className="flex flex-col items-center justify-center text-center min-h-screen px-6"
-      style={{ backgroundColor: '#141721' }}
+      id="home"
+      className="flex min-h-[640px] flex-col items-center justify-center px-6 pb-10 pt-[64px] text-center sm:min-h-screen sm:pt-[68px]"
     >
-      <div className="flex flex-col items-center gap-6 max-w-3xl">
-        <h1
-          style={{
-            fontFamily: "'Work Sans', sans-serif",
-            fontSize: 'clamp(36px, 5vw, 48px)',
-            fontWeight: 600,
-            letterSpacing: '0.96px',
-            lineHeight: '1.2',
-            color: '#e3e6ed',
-          }}
-        >
-          Play Competitive Games
-          <br />
-          with Real Opponents
+      <div className="flex w-full max-w-[343px] flex-col items-center gap-6 sm:max-w-3xl">
+        <h1 className="font-heading text-[34px] font-semibold leading-[1.18] tracking-normal text-foreground min-[390px]:text-4xl sm:text-5xl">
+          <span className="sm:block">Play Competitive Games</span>
+          <span className="sm:block"> with Real Opponents</span>
         </h1>
 
-        <p
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: '16px',
-            fontWeight: 400,
-            lineHeight: '22.4px',
-            color: '#e3e6ed',
-            maxWidth: '384px',
-          }}
-        >
+        <p className="max-w-sm font-body text-base font-normal leading-[22.4px] text-foreground">
           Play games against real players and win the full pot when you come out on top.
         </p>
 
-        <button
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '16px',
-            fontWeight: 600,
-            letterSpacing: '-0.18px',
-            color: '#161a26',
-            background: '#c9a24d',
-            border: 'none',
-            borderRadius: '8px',
-            padding: '14px 32px',
-            cursor: 'pointer',
-            marginTop: '8px',
-          }}
-          className="hover:bg-[#b8903e] transition-colors"
-        >
+        <Button size="xl" className="mt-2 h-auto w-full max-w-[190px] px-8 py-3.5 text-base sm:w-auto">
           Start Playing
-        </button>
+        </Button>
       </div>
     </section>
-  );
+  )
 }

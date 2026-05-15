@@ -1,96 +1,51 @@
 const features = [
   {
-    icon: '/assets/icon-for-everyone.svg',
-    title: 'For Everyone',
-    description: 'Designed for both newcomers and experienced blockchain users.',
+    icon: "/assets/icon-for-everyone.svg",
+    title: "For Everyone",
+    description: "Designed for both newcomers and experienced blockchain users.",
   },
   {
-    icon: '/assets/icon-fair-transparent.svg',
-    title: 'Fair and Transparent',
-    description: 'Every match is verified on-chain, no hidden advantages.',
+    icon: "/assets/icon-fair-transparent.svg",
+    title: "Fair and Transparent",
+    description: "Every match is verified on-chain, no hidden advantages.",
   },
   {
-    icon: '/assets/icon-easy-to-use.svg',
-    title: 'Easy to Use',
-    description: 'Intuitive interface that gets you playing in seconds.',
+    icon: "/assets/icon-easy-to-use.svg",
+    title: "Easy to Use",
+    description: "Intuitive interface that gets you playing in seconds.",
   },
   {
-    icon: '/assets/icon-confidence.svg',
-    title: 'Confidence, Not Confusion',
-    description: 'Matches end cleanly. Outcomes are recorded and settled without guesswork.',
+    icon: "/assets/icon-confidence.svg",
+    title: "Confidence, Not Confusion",
+    description: "Matches end cleanly. Outcomes are recorded and settled without guesswork.",
   },
-];
+]
 
 export default function WhyCepheiSection() {
   return (
-    <section className="flex flex-col items-center gap-12 px-6 py-8">
-      <h2
-        style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '24px',
-          fontWeight: 500,
-          letterSpacing: '-0.48px',
-          color: '#e3e6ed',
-        }}
-      >
-        Why Cephei?
-      </h2>
+    <section id="why-us" className="flex flex-col items-center gap-10 px-6 py-8 sm:gap-12">
+      <h2 className="font-control text-2xl font-medium text-foreground">Why Cephei?</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full max-w-5xl">
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
         {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-col gap-4 p-8"
-            style={{
-              background: 'rgba(255, 255, 255, 0.10)',
-              borderRadius: '8px',
-            }}
-          >
-            {/* Icon with blue tint background */}
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '8px',
-                background: 'rgba(77, 163, 255, 0.80)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '8px',
-              }}
-            >
+          <article key={feature.title} className="flex flex-col gap-4 rounded-md bg-white/10 p-6 sm:p-8">
+            <div className="flex size-12 items-center justify-center rounded-md">
               <img
                 src={feature.icon}
-                alt={feature.title}
-                style={{ width: '28px', height: '28px', objectFit: 'contain' }}
+                alt=""
+                aria-hidden="true"
+                className="size-8 object-contain cephei-blue-icon"
               />
             </div>
 
-            <h3
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: '16px',
-                fontWeight: 700,
-                color: '#e3e6ed',
-              }}
-            >
-              {feature.title}
-            </h3>
+            <h3 className="font-body text-base font-bold text-foreground">{feature.title}</h3>
 
-            <p
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: '16px',
-                fontWeight: 400,
-                lineHeight: '22.4px',
-                color: '#e3e6ed',
-              }}
-            >
+            <p className="font-body text-base font-normal leading-[22.4px] text-foreground">
               {feature.description}
             </p>
-          </div>
+          </article>
         ))}
       </div>
     </section>
-  );
+  )
 }

@@ -49,11 +49,18 @@
     /* Cephei brand tokens */
     --color-cephei-bg: #141721;
     --color-cephei-bg-secondary: #161a26;
+    --color-cephei-surface-muted: #202637;
+    --color-cephei-surface-raised: #252c3f;
     --color-cephei-teal: #4fd1c5;
     --color-cephei-gold: #c9a24d;
+    --color-cephei-gold-hover: #b8903e;
     --color-cephei-blue: #4da3ff;
     --color-cephei-text: #e3e6ed;
     --color-cephei-muted: #c7cbd6;
+    --color-cephei-success: #4fd1c5;
+    --color-cephei-warning: #f2c94c;
+    --color-cephei-danger: #f97066;
+    --color-cephei-overlay: rgba(8, 10, 16, 0.72);
 
     /* Font families */
     --font-advent: 'Advent Pro', sans-serif;
@@ -96,6 +103,25 @@
     --sidebar-accent-foreground: #e3e6ed;
     --sidebar-border: rgba(77, 163, 255, 0.20);
     --sidebar-ring: #4da3ff;
+
+    /* Cephei semantic theme */
+    --surface-muted: #202637;
+    --surface-raised: #252c3f;
+    --brand-teal: #4fd1c5;
+    --action-gold: #c9a24d;
+    --action-gold-hover: #b8903e;
+    --system-blue: #4da3ff;
+    --success: #4fd1c5;
+    --warning: #f2c94c;
+    --danger: #f97066;
+    --overlay: rgba(8, 10, 16, 0.72);
+    --font-logo: 'Advent Pro', sans-serif;
+    --font-heading: 'Work Sans', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-control: 'Inter', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    --shadow-focus: 0 0 0 3px rgba(77, 163, 255, 0.35);
+    --shadow-raised: 0 18px 60px rgba(0, 0, 0, 0.32);
 }
 
 @layer base {
@@ -113,5 +139,37 @@
     font-family: 'Space Grotesk', sans-serif;
     margin: 0;
     min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .cephei-blue-icon {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(67%) saturate(1665%) hue-rotate(186deg) brightness(102%) contrast(101%);
+  }
+
+  .cephei-white-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 640ms ease,
+      transform 640ms ease;
+    will-change: opacity, transform;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }
