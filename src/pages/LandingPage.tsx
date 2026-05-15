@@ -7,13 +7,18 @@ import HowItWorksSection from "@/components/landing/HowItWorksSection"
 import ScrollReveal from "@/components/landing/ScrollReveal"
 import WhyCepheiSection from "@/components/landing/WhyCepheiSection"
 
-export default function LandingPage() {
+type LandingPageProps = {
+  onLogIn: () => void
+  onSignUp: () => void
+}
+
+export default function LandingPage({ onLogIn, onSignUp }: LandingPageProps) {
   return (
     <div className="min-h-full w-full overflow-x-hidden bg-background text-foreground">
-      <Navbar />
+      <Navbar onLogIn={onLogIn} onSignUp={onSignUp} />
 
       <main className="flex flex-col gap-14 pb-12 sm:gap-[72px]">
-        <HeroSection />
+        <HeroSection onStartPlaying={onSignUp} />
         <ScrollReveal>
           <HowItWorksSection />
         </ScrollReveal>

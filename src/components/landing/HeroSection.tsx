@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
 
-export default function HeroSection() {
+type HeroSectionProps = {
+  onStartPlaying: () => void
+}
+
+export default function HeroSection({ onStartPlaying }: HeroSectionProps) {
   return (
     <section
       id="home"
@@ -16,7 +20,11 @@ export default function HeroSection() {
           Play games against real players and win the full pot when you come out on top.
         </p>
 
-        <Button size="xl" className="mt-2 h-auto w-full max-w-[190px] px-8 py-3.5 text-base sm:w-auto">
+        <Button
+          size="xl"
+          className="mt-2 h-auto w-full max-w-[190px] px-8 py-3.5 text-base sm:w-auto"
+          onClick={onStartPlaying}
+        >
           Start Playing
         </Button>
       </div>
